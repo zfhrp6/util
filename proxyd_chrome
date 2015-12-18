@@ -1,0 +1,1 @@
+ssh -TD 1088 socks_proxy_server_name_in_sshconfig >/dev/null | ~/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --proxy-server="socks5://127.0.0.1:1088" --incognito

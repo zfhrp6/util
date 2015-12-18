@@ -1,0 +1,15 @@
+fortune_brew_random_formula=$(brew search | tail +$(((( $(od -vAn -N4 -tu4 < /dev/random) % $(brew search | wc -l) )) + 1)) | head -1)
+echo
+brew info $fortune_brew_random_formula | tail +1 | head -8
+echo ""
+/bin/echo -n "open this formula site? [y/N]: "
+read fortune_brew_y_or_n
+case $fortune_brew_y_or_n in
+	[Yy]|[Yy][Ee][Ss])
+		brew home $fortune_brew_random_formula
+		;;
+	*)
+		;;
+esac
+unset fortune_brew_y_or_n
+unset fortune_brew_random_formula

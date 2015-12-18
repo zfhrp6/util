@@ -1,0 +1,1 @@
+brew home $(brew search | tail +$(((( $(od -vAn -N4 -tu4 < /dev/random) % $(brew search | wc -l) )) + 1)) | head -1)

@@ -1,0 +1,1 @@
+find . -type f -print0 | xargs -I{} -0 flac -8 -V --delete-input-file --replay-gain {}
