@@ -79,7 +79,6 @@ def optimize(filepath, output, silent, force):
         print('check if the file is jpg/png/gif.')
 
 
-
 def main():
     optimize()
 
