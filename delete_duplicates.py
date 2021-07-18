@@ -25,14 +25,15 @@ def remove_duplicate(filelist):
     ret = set({})
     for f in filelist:
         digest = ''
-        with open(f'{args.path}/{f}', 'rb') as fd:
+        fpath = f'{args.path}/{f}'
+        with open(fpath, 'rb') as fd:
             digest = md5(fd.read()).hexdigest()
         if digest in ret:
             if args.delete:
-                print(f'delete: {f}')
-                remove(f)
+                print(f'delete: {fpath}')
+                remove(fpath)
             else:
-                print(f'delete(dry-run): {f}')
+                print(f'delete(dry-run): {fpath}')
         else:
             ret.add(digest)
 
